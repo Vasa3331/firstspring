@@ -49,6 +49,23 @@
 			<version>1.14.3</version>
 			<scope>compile</scope>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>5.3.18</version>
+		</dependency>
+		<dependency>
+			<groupId>org.spincast</groupId>
+			<artifactId>spincast-plugins-scheduledtasks</artifactId>
+			<version>1.14.1</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.spincast</groupId>
+			<artifactId>spincast-plugins-scheduledtasks-parent</artifactId>
+			<version>1.14.1</version>
+			<scope>compile</scope>
+		</dependency>
 	</dependencies>
 
 	<build>
