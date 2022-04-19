@@ -14,9 +14,17 @@ import java.io.IOException;
 public class CurrencyService {
     
     String p;
+    long endTimePoint = 0L;
 
     @Scheduled(fixedRate = 5000)
     public String getUsdRate() {
+        long startTime = System.currentTimeMillis();
+        if (endTimePoint == 0L) {
+            System.out.println("Первый цикл парсинга. Посчитать промежоток не возможно.");
+        } else {
+            System.out.println(startTime - endTimePoint);
+        }
+
         Document doc = null;
 
         try {
@@ -29,6 +37,7 @@ public class CurrencyService {
         }
         Elements d = doc.select("tbody>tr>td:contains(Доллар США)~td");
         p = d.text();
+        endTimePoint = System.currentTimeMillis();
         return p;
     }
 
