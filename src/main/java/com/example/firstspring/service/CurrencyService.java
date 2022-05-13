@@ -28,10 +28,13 @@ public class CurrencyService {
         Document doc = null;
 
         try {
+            long startTime = System.currentTimeMillis();
             doc = Jsoup.connect("https://www.cbr.ru/currency_base/daily/")
                     .userAgent("Chrome/4.0.249.0 Safari/532.5")
                     .referrer("http://www.google.com")
                     .get();
+            long endTime = System.currentTimeMillis();
+            System.out.println(endTime - startTime);
         } catch (IOException e) {
             e.printStackTrace();
         }
